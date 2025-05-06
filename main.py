@@ -36,6 +36,10 @@ async def upload(file: UploadFile = File(...)):
     except Exception as e:
         print(f"Error communicating with the service: {e}")
         return {"error": "The request could not be processed. Please try again later."}
+    
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the cp API Gateway!"}
 
 if __name__ == "__main__":
     print("Starting cp-api-gateway")
