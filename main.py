@@ -19,7 +19,7 @@ app.add_middleware(
 SERVICE2_URL = os.getenv("SERVICE2_URL", "http://0.0.0.0:8001")
 ENDPOINT = SERVICE2_URL + "/tint-image/"
 
-@app.post("/upload/")
+@app.post("/upload")
 async def upload(file: UploadFile = File(...)):
     try:
         async with httpx.AsyncClient() as client:
